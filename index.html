@@ -1,89 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>e•wallet</title>
     <script src="https://unpkg.com/feather-icons"></script>
 
     <!-- Linha para fazer o link com o arquivo CSS  -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Pop-up -->
+    <div id="popupbackground">
+      <div id="popup">
+        <form>
+          <label for="title">Título</label>
+          <input
+            type="text"
+            name="title"
+            placeholder="Descrição do lançamento"
+          />
+          <div>
+            <label for="price">Preço</label>
+            <input type="text" name="price" placeholder="Valor em reais (R$)" />
+
+            <label for="category">Categoria</label>
+            <select name="category" id="category">
+              <option value=""></option>
+              <option value="entrada">Entrada</option>
+              <option value="saida">Saída</option>
+            </select>
+          </div>
+
+          <label for="identifier">Identificador</label>
+          <input
+            type="text"
+            name="identifier"
+            placeholder="Descrição da Categoria"
+          />
+          
+          <button>Cadastrar</button>
+        </form>
+      </div>
+    </div>
+
     <!-- cabeçalho -->
     <div id="header">
-        <div class="content">
-            <img src="assets/Logo.svg" alt="">
-        </div>
+      <div class="content">
+        <img src="assets/Logo.svg" alt="" />
+      </div>
     </div>
 
     <!-- Cards -->
     <div id="cards" class="content">
-        
-            <div class="card">
-                <div class="card-title in">
-                    <span>Entradas</span>
-                    <i data-feather="arrow-up-circle"></i>
-                </div>
-                <h1>R$ 7.000,00</h1>
-            </div>
-            <div class="card">
-                <div class="card-title out">
-                    <span>Saídas</span>
-                    <i data-feather="arrow-down-circle"></i>
-                </div>
-                <h1>R$ 5.000,00</h1>
-            </div>
-            <div class="card total">
-                <div class="card-title">
-                    <span>Total</span>
-                    <i data-feather="dollar-sign"></i>
-                </div>
-                <h1>R$ 7.000,00</h1>
-            </div>
-       
+      <div class="card">
+        <div class="card-title in">
+          <span>Entradas</span>
+          <i data-feather="arrow-up-circle"></i>
+        </div>
+        <h1>R$ 7.000,00</h1>
+      </div>
+      <div class="card">
+        <div class="card-title out">
+          <span>Saídas</span>
+          <i data-feather="arrow-down-circle"></i>
+        </div>
+        <h1>R$ 5.000,00</h1>
+      </div>
+      <div class="card total">
+        <div class="card-title">
+          <span>Total</span>
+          <i data-feather="dollar-sign"></i>
+        </div>
+        <h1>R$ 7.000,00</h1>
+      </div>
     </div>
 
     <!-- Tabela -->
     <div id="table" class="content">
       <table class="content">
         <thead>
-            <tr>
-                <th>Título</th>
-                <th>Preço</th>
-                <th>Categoria</th>
-                <th>Data</th>
-            </tr>
+          <tr>
+            <th>Título</th>
+            <th>Preço</th>
+            <th>Categoria</th>
+            <th>Data</th>
+          </tr>
         </thead>
         <tbody>
-            <tr>
-               <td>Desenvolvimento</td>
-               <td>R$ 5.000,00</td>
-               <td class="green"><i data-feather="dollar-sign"></i>Venda</td>
-               <td>13/08/2021</td> 
-            </tr>
-            <tr>
-               <td>Uber</td>
-               <td>R$ 19,90</td>
-               <td class="red"><i data-feather="map-pin"></i>Transporte</td>
-               <td>12/08/2021</td> 
-            </tr>
-            <tr>
-               <td>Ifood</td>
-               <td>R$ 20,00</td>
-               <td class="red"><i data-feather="coffee"></i>Alimentação</td>
-               <td>10/08/2021</td> 
-            </tr>
+          <tr>
+            <td>Desenvolvimento</td>
+            <td>R$ 5.000,00</td>
+            <td class="green"><i data-feather="dollar-sign"></i>Venda</td>
+            <td>13/08/2021</td>
+          </tr>
+          <tr>
+            <td>Uber</td>
+            <td>R$ 19,90</td>
+            <td class="red"><i data-feather="map-pin"></i>Transporte</td>
+            <td>12/08/2021</td>
+          </tr>
+          <tr>
+            <td>Ifood</td>
+            <td>R$ 20,00</td>
+            <td class="red"><i data-feather="coffee"></i>Alimentação</td>
+            <td>10/08/2021</td>
+          </tr>
         </tbody>
-      </table> 
+      </table>
     </div>
 
     <div id="addButton">
-        <a><i data-feather="plus"></i></a>
+      <a><i data-feather="plus"></i></a>
     </div>
     <script>
-        feather.replace()
+      feather.replace();
     </script>
-</body>
+  </body>
 </html>

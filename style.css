@@ -1,137 +1,154 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
-    margin: 0;
-    border: 0;
-    padding: 0;
-    outline: none;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
 }
 
-body{
-    background-color: #f0f2f5;
-    height: 100vh;
-    position: relative;
+body {
+  background-color: #f0f2f5;
+  height: 100vh;
+  position: relative;
 }
 
-.content{
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto; 
+.content {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-#header{
-    width: 100%;
-    height: 210px;
-    background-color: #7c0061;   
+#popupbackground {
+  background-color: rgba(0, 0, 0, 0.726);
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#header img{
-    margin-top: 50px;
+#popup {
+  width: 500px;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #f0f2f5;
+}
+
+#header {
+  width: 100%;
+  height: 210px;
+  background-color: #7c0061;
+}
+
+#header img {
+  margin-top: 50px;
 }
 
 #cards {
-    display: flex;
-    align-items: center;
-    margin-top: -100px;
-  }
-
-.card{
-    width: 352px;
-    height: 136px;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    margin-right: 20px;
-}
-.card-title{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  margin-top: -100px;
 }
 
-.in svg{
-    color:#12a454;
+.card {
+  width: 352px;
+  height: 136px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-right: 20px;
+}
+.card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
 }
 
-.out svg{
-    color:#e83f5b;
+.in svg {
+  color: #12a454;
 }
 
-.total{
-    background-color: #474747;
-    color: #fff;
-    margin-right: 0;
+.out svg {
+  color: #e83f5b;
 }
 
-table{
-    text-align: left;
-    padding: 10px;
-    border-spacing: 0;
-    border-collapse: collapse;
+.total {
+  background-color: #474747;
+  color: #fff;
+  margin-right: 0;
 }
 
-thead{
-    border-top: 16px solid transparent;
-    border-bottom: 8px solid transparent;
+table {
+  text-align: left;
+  padding: 10px;
+  border-spacing: 0;
+  border-collapse: collapse;
 }
 
-thead th{
-    color: #969cb2;
-    font-weight: 300;
-    padding-left: 10px;
+thead {
+  border-top: 16px solid transparent;
+  border-bottom: 8px solid transparent;
 }
 
-tbody tr{
-    border-bottom: 8px solid transparent;
-    background-color: #fff;
-    background-clip: padding-box;
+thead th {
+  color: #969cb2;
+  font-weight: 300;
+  padding-left: 10px;
 }
 
-tbody tr td{
-    padding: 10px;
-    color: #363f5f;
+tbody tr {
+  border-bottom: 8px solid transparent;
+  background-color: #fff;
+  background-clip: padding-box;
 }
 
-tbody td svg{
-    width:15px;
-    height:15px;
-    margin-right: 5px;
+tbody tr td {
+  padding: 10px;
+  color: #363f5f;
 }
 
-
-.green{
-    color: #12a454;
-    font-weight: 400;
+tbody td svg {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
 }
 
-.red{
-    color: #e83f5b;
-    font-weight: 400;
+.green {
+  color: #12a454;
+  font-weight: 400;
+}
+
+.red {
+  color: #e83f5b;
+  font-weight: 400;
 }
 
 #addButton a {
-    color:#fff;
-    border-radius: 50%; /*Deixa qualquer elemento redondo*/
-    padding:15px;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
+  color: #fff;
+  border-radius: 50%; /*Deixa qualquer elemento redondo*/
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #addButton {
-    background-color: #12a454;
-    border-radius: 50%;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin-right: 70px;
-    margin-bottom: 50px;
-    transition: background 2s;
+  background-color: #12a454;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-right: 70px;
+  margin-bottom: 50px;
+  transition: background 2s;
 }
 
-#addButton:hover{
-    background-color: #0c6434;
-  }
+#addButton:hover {
+  background-color: #0c6434;
+}
