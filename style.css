@@ -27,7 +27,7 @@ body {
   height: 100vh;
   z-index: 5;
   position: absolute;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
 }
@@ -37,7 +37,56 @@ body {
   padding: 15px;
   border-radius: 15px;
   background-color: #f0f2f5;
+  margin: auto;
 }
+#popup form{
+  display: flex;
+  align-items: initial;
+  flex-direction: column;
+}
+
+#popup form div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#popup form a{
+  text-align: end;
+}
+
+form input, form select, form button {
+  padding: 10px;
+  border-radius: 5px;
+  margin: auto 5px;
+  margin-top: 10px;
+  flex:1;
+  border: 1px solid transparent;
+  transition: border-color linear 0.3s;
+}
+
+form input:focus,
+form select:focus{
+  border-color: #7c0061;
+}
+
+form label{
+  font-weight: 500;
+  color: #969cb2;
+  font-size: 14px;
+}
+
+form button{
+  background-color: #7c0061;
+  color: #fff;
+  margin-top:30px;
+  transition: background linear 0.2s;
+}
+
+form button:hover{
+  background-color: #570044;
+}
+
 
 #header {
   width: 100%;
