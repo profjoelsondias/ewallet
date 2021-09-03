@@ -1,36 +1,17 @@
-var transactions = [
-  {
-    title: "Desenvolvimento",
-    price: 5000,
-    currency: "BRL",
-    type: "entrada",
-    category: "venda",
-    date: "23/07/2021",
-  },
-  {
-    title: "Ifood",
-    price: 20.5,
-    currency: "BRL",
-    type: "saída",
-    category: "alimentação",
-    date: "05/08/2021",
-  },
-];
+// transações ficticias cadastradas (criadas manualmente)
+var transactions = 
+JSON.parse(localStorage.getItem("@ewallet/transactions"))||[];
 
-{
-  /*
-   <tr>
-      <td>Desenvolvimento</td>
-      <td>R$ 5.000,00</td>
-      <td class="green"><i data-feather="dollar-sign"></i>Venda</td>
-      <td>13/08/2021</td>
-    </tr> 
-*/
-}
+
+// Adiciona o corpo da tabela na variavel table
 var table = document.querySelector("#table tbody");
 
+//Mapeamento das transações
 transactions.map((transaction) => {
   var row = document.createElement("tr");
+  // <tr>
+  //  <td>Desenvolvimento</td>
+  // </tr>
 
   var title = document.createElement("td");
   title.append(transaction.title);
@@ -56,6 +37,7 @@ transactions.map((transaction) => {
 var addBtn = document.querySelector("#addButton a");
 var popup = document.querySelector("#popupbackground");
 var closeBtn = document.querySelector("#popup form a");
+var form = document.querySelector("form");
 
 addBtn.addEventListener("click", () => {
   // O que vai acontecer quando clicar no botão adicionar
@@ -64,14 +46,47 @@ addBtn.addEventListener("click", () => {
 });
 
 closeBtn.addEventListener("click", () => {
+  // O que vai acontecer quando clicar no botão fechar
   popup.style.display = "none";
   popup.style.transition = "display 5s";
+  form.reset();
 });
 
+form.addEventListener("submit", (event) => {
+  //Previne para que a tela não recarregue
+  event.preventDefault();
+
+  //Capturar os dados preenchidos no formulário
+  var data = new FormData(event.target);
+
+  //Desestrururar os dados em variáveis
+  var { title, price, category, currency, identifier } =
+    Object.fromEntries(data);
+  //Pegar a data atual no formato DD/MM/YYYY
+  var date = new Date().toLocaleDateString();
+
+  var transaction = {
+    title,
+    price: parseFloat(price),
+    category,
+    currency, 
+    identifier,
+    id: transactions.length + 1,
+    date
+  }
+  transactions.push(transaction)
+  localStorage.setItem("@ewallet/transactions", JSON.stringify(transactions));
+  window.location.reload();
+});
+
+// Métodos ou Funções
 function moneyFormat(currency, price) {
   var value = new Intl.NumberFormat("pt-BR", {
     style: "currency",
-    currency: currency,
+    currency,
   }).format(price);
   return value;
 }
+
+
+

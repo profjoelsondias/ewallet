@@ -26,24 +26,47 @@
           />
           <div>
             <label for="price">Preço</label>
-            <input type="text" name="price" placeholder="Valor em reais (R$)" />
-
-            <label for="category">Categoria</label>
-            <select name="category" id="category">
-              <option value=""></option>
-              <option value="entrada">Entrada</option>
-              <option value="saida">Saída</option>
+            <input 
+              type="number"
+              min="0" 
+              step="0.01"
+              name="price" 
+              placeholder="Valor em reais (R$)" 
+            />
+          
+            <label for="currency">Moeda</label>
+            <select name="currency" id="currency">
+              <option 
+              value="BRL" 
+              style="display:none"
+              selected
+              ></option>
+              <option value="BRL">R$</option>
+              <option value="USD">US$</option>
             </select>
           </div>
 
-          <label for="identifier">Identificador</label>
-          <input
-            type="text"
-            name="identifier"
-            placeholder="Descrição da Categoria"
-          />
-          
-          <button>Cadastrar</button>
+          <div>
+            <label for="category">Categoria</label>
+            <select name="category" id="category">
+              <option 
+              value="saida" 
+              style="display:none"
+              selected
+              ></option>
+              <option value="entrada">Entrada</option>
+              <option value="saida">Saída</option>
+            </select>
+
+            <label for="identifier">Identificador</label>
+            <input
+              type="text"
+              name="identifier"
+              placeholder="Descrição da Categoria"
+            />
+          </div>
+
+          <button type="submit">Cadastrar</button>
         </form>
       </div>
     </div>
@@ -92,7 +115,7 @@
           </tr>
         </thead>
         <tbody>
-         <!-- Essa parte será carregada dinamicamente pelo javascript -->
+          <!-- Essa parte será carregada dinamicamente pelo javascript -->
         </tbody>
       </table>
     </div>
