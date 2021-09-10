@@ -79,6 +79,32 @@ form.addEventListener("submit", (event) => {
   window.location.reload();
 });
 
+var entrada = document.querySelector(".in h1")
+var saida = document.querySelector(".out h1")
+var total = document.querySelector(".total h1")
+
+var valoresEntrada = transactions.reduce((count, currentValue)=> {
+if(currentValue.category === "entrada"){
+  return count + currentValue.price;
+}else {
+  return count;
+}
+}, 0)
+
+var valoresSaida = transactions.reduce((count, currentValue)=> {
+if(currentValue.category === "saida"){
+  return count + currentValue.price;
+}else {
+  return count;
+}
+}, 0)
+
+var somatorio = valoresEntrada - valoresSaida
+
+entrada.innerHTML = moneyFormat("BRL", valoresEntrada)
+saida.innerHTML = moneyFormat("BRL", valoresSaida)
+total.innerHTML = moneyFormat("BRL", somatorio)
+
 // Métodos ou Funções
 function moneyFormat(currency, price) {
   var value = new Intl.NumberFormat("pt-BR", {
