@@ -48,9 +48,9 @@
 
           <div>
             <label for="category">Categoria</label>
-            <select name="category" id="category">
+            <select name="category" id="category" onchange="handleCategoryChange()">
               <option 
-              value="saida" 
+              value="null" 
               style="display:none"
               selected
               ></option>
@@ -59,11 +59,9 @@
             </select>
 
             <label for="identifier">Identificador</label>
-            <input
-              type="text"
-              name="identifier"
-              placeholder="Descrição da Categoria"
-            />
+            <select name="identifier" style:"flex:1" disabled>
+              <!--Carregado via Javascript-->
+            </select>
           </div>
 
           <button type="submit">Cadastrar</button>
